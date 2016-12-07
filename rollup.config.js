@@ -1,5 +1,11 @@
 export default {
-  entry: 'src/mapbox.module.js',
+  moduleName: "mapbox.core",
+  entry: 'src/js/mapbox.module.js',
   format: 'umd',
-  dest: 'dist/mapbox.umd.js'
+  dest: 'dist/core.umd.js',
+  sourceMap: true,
+  globals: {
+    '@angular/core': 'ng.core',
+    'mapbox-gl': 'mapbox.gl'
+  }
 };

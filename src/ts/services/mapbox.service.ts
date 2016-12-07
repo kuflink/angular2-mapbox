@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import mapboxgl from 'mapbox-gl';
+import { mapboxgl } from 'mapbox-gl';
 
 @Injectable()
 export class MapBoxService {
