@@ -2,13 +2,15 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "es2015",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "outDir": "src/js"
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "src/js",
+    "rootDir": ".",
+    "sourceMap": true,
+    "removeComments": false,
+    "moduleResolution": "node",
+    "declaration": true,
+    "lib": [ "es2015", "dom" ]
   }
 }

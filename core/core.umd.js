@@ -251,7 +251,11 @@ exports.MapBoxModule = MapBoxModule_1 = __decorate$3([
     __metadata$3('design:paramtypes', [])
 ], exports.MapBoxModule);
 
-// main modules
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the core package.
+ */
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
