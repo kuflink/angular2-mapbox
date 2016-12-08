@@ -39,7 +39,7 @@ export class MapBoxComponent implements OnInit {
 				center: _self.center, 
 				zoom: _self.zoom, 
 				hash: _self.hash
-			}, _self.index);
+			});
 
 			_self.state.emit("Loaded");
 		}, 100);
