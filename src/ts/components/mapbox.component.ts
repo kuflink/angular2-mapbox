@@ -30,18 +30,18 @@ export class MapBoxComponent implements OnInit {
 	constructor(@Inject(MapBoxService) private _mapBoxService: MapBoxService) { }
 
     ngOnInit() {
-		var _self = this;
+			var _self = this;
 
-		setTimeout(function() {
-			_self._mapBoxService.Map({
-				container: 'map' + _self.index,
-				style: _self.style,
-				center: _self.center, 
-				zoom: _self.zoom, 
-				hash: _self.hash
-			});
+			setTimeout(function() {
+				_self._mapBoxService.Map({
+					container: 'map' + _self.index,
+					style: _self.style,
+					center: _self.center, 
+					zoom: _self.zoom, 
+					hash: _self.hash
+				});
 
-			_self.state.emit("Loaded");
-		}, 100);
+				_self.state.emit("Loaded");
+			}, 100);
     }
  }

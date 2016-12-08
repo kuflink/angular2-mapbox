@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('mapbox-gl/dist/mapbox-gl.js')) :
-    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'mapbox-gl/dist/mapbox-gl.js'], factory) :
-    (factory((global.mapbox = global.mapbox || {}, global.mapbox.core = global.mapbox.core || {}),global.ng.core,global.mapboxGl_dist_mapboxGl_js));
-}(this, (function (exports,_angular_core,mapboxGl_dist_mapboxGl_js) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
+    (factory((global.mapbox = global.mapbox || {}, global.mapbox.core = global.mapbox.core || {}),global.ng.core));
+}(this, (function (exports,_angular_core) { 'use strict';
 
 var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -22,14 +22,14 @@ exports.MapBoxService = class MapBoxService {
             this.accessToken = _config;
     }
     Map(options) {
-        mapboxGl_dist_mapboxGl_js.mapboxgl.accessToken = this.accessToken;
-        this.map = new mapboxGl_dist_mapboxGl_js.mapboxgl.Map(options);
+        mapboxgl.accessToken = this.accessToken;
+        this.map = new mapboxgl.Map(options);
         return true;
     }
     Marker(el, options, coordinates) {
         var _self = this;
         setTimeout(function () {
-            new mapboxGl_dist_mapboxGl_js.mapboxgl.Marker(el, options)
+            new mapboxgl.Marker(el, options)
                 .setLngLat(coordinates)
                 .addTo(_self.map);
         }, 100);
@@ -49,8 +49,8 @@ exports.MapBoxService = class MapBoxService {
 };
 exports.MapBoxService = __decorate$1([
     _angular_core.Injectable(),
-    __param$1(0, _angular_core.Inject('MAPBOX_KEY')), 
-    __metadata$1('design:paramtypes', [String])
+    __param$1(0, _angular_core.Inject('MAPBOX_KEY')),
+    __metadata$1("design:paramtypes", [String])
 ], exports.MapBoxService);
 
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -65,6 +65,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+/*
+*
+* Mapbox component
+*
+*/
 exports.MapBoxComponent = class MapBoxComponent {
     constructor(_mapBoxService) {
         this._mapBoxService = _mapBoxService;
@@ -90,8 +95,8 @@ exports.MapBoxComponent = class MapBoxComponent {
     }
 };
 __decorate([
-    _angular_core.Output(), 
-    __metadata('design:type', Object)
+    _angular_core.Output(),
+    __metadata("design:type", Object)
 ], exports.MapBoxComponent.prototype, "state", void 0);
 exports.MapBoxComponent = __decorate([
     _angular_core.Component({
@@ -105,8 +110,8 @@ exports.MapBoxComponent = __decorate([
         inputs: ['style', 'center', 'zoom', 'hash', 'index'],
         providers: [exports.MapBoxService]
     }),
-    __param(0, _angular_core.Inject(exports.MapBoxService)), 
-    __metadata('design:paramtypes', [exports.MapBoxService])
+    __param(0, _angular_core.Inject(exports.MapBoxService)),
+    __metadata("design:paramtypes", [exports.MapBoxService])
 ], exports.MapBoxComponent);
 
 var __decorate$2 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -121,6 +126,11 @@ var __metadata$2 = (undefined && undefined.__metadata) || function (k, v) {
 var __param$2 = (undefined && undefined.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+/*
+*
+* Mapbox Marker component
+*
+*/
 exports.MapBoxMarkerDirective = class MapBoxMarkerDirective {
     constructor(_mapBoxService) {
         this._mapBoxService = _mapBoxService;
@@ -152,16 +162,16 @@ exports.MapBoxMarkerDirective = class MapBoxMarkerDirective {
     }
 };
 __decorate$2([
-    _angular_core.Output(), 
-    __metadata$2('design:type', Object)
+    _angular_core.Output(),
+    __metadata$2("design:type", Object)
 ], exports.MapBoxMarkerDirective.prototype, "click", void 0);
 exports.MapBoxMarkerDirective = __decorate$2([
     _angular_core.Directive({
         selector: 'mapbox-marker',
         inputs: ['image', 'width', 'height', 'coordinates', 'click', 'data', 'flyTo']
     }),
-    __param$2(0, _angular_core.Inject(exports.MapBoxService)), 
-    __metadata$2('design:paramtypes', [exports.MapBoxService])
+    __param$2(0, _angular_core.Inject(exports.MapBoxService)),
+    __metadata$2("design:paramtypes", [exports.MapBoxService])
 ], exports.MapBoxMarkerDirective);
 
 var __decorate$4 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -176,6 +186,11 @@ var __metadata$4 = (undefined && undefined.__metadata) || function (k, v) {
 var __param$3 = (undefined && undefined.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+/*
+*
+* Mapbox Marker Directive component
+*
+*/
 let MapBoxMarkerDirectionComponent = class MapBoxMarkerDirectionComponent {
     constructor(_mapBoxService) {
         this._mapBoxService = _mapBoxService;
@@ -201,8 +216,8 @@ MapBoxMarkerDirectionComponent = __decorate$4([
         inputs: ['direction'],
         providers: [exports.MapBoxService]
     }),
-    __param$3(0, _angular_core.Inject(exports.MapBoxService)), 
-    __metadata$4('design:paramtypes', [exports.MapBoxService])
+    __param$3(0, _angular_core.Inject(exports.MapBoxService)),
+    __metadata$4("design:paramtypes", [exports.MapBoxService])
 ], MapBoxMarkerDirectionComponent);
 
 var __decorate$3 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -216,6 +231,13 @@ var __metadata$3 = (undefined && undefined.__metadata) || function (k, v) {
 };
 /*
  *
+ * Mapbox module
+ *
+ * https://angular.io/docs/ts/latest/guide/ngmodule.html
+ *
+ */
+/*
+ *
  * @NgModule
  *
  * The @NgModule decorator defines the metadata for the module.
@@ -223,7 +245,7 @@ var __metadata$3 = (undefined && undefined.__metadata) || function (k, v) {
  * We'll take an intuitive approach to understanding the metadata and fill in details as we go.
  *
  */
-let MapBoxModule_1 = class MapBoxModule {
+exports.MapBoxModule = MapBoxModule_1 = class MapBoxModule {
     static forRoot(config) {
         return {
             ngModule: MapBoxModule_1,
@@ -233,7 +255,6 @@ let MapBoxModule_1 = class MapBoxModule {
         };
     }
 };
-exports.MapBoxModule = MapBoxModule_1;
 exports.MapBoxModule = MapBoxModule_1 = __decorate$3([
     _angular_core.NgModule({
         exports: [
@@ -246,9 +267,10 @@ exports.MapBoxModule = MapBoxModule_1 = __decorate$3([
             exports.MapBoxMarkerDirective,
             MapBoxMarkerDirectionComponent
         ]
-    }), 
-    __metadata$3('design:paramtypes', [])
+    }),
+    __metadata$3("design:paramtypes", [])
 ], exports.MapBoxModule);
+var MapBoxModule_1;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
