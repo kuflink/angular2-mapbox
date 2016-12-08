@@ -1,5 +1,7 @@
 # angular2-mapbox
 
+[![Join the chat at https://gitter.im/kuflink/angular2-mapbox](https://badges.gitter.im/kuflink/angular2-mapbox.svg)](https://gitter.im/kuflink/angular2-mapbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Angular2 components for [mapbox-gl](https://www.npmjs.com/package/mapbox-gl). This project is currently in development state. Please do not use this in production.
 
 ## Install
