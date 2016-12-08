@@ -105,7 +105,7 @@ exports.MapBoxComponent = __decorate([
         <ng-content></ng-content>
       </div>
     `,
-        inputs: ['style', 'center', 'zoom', 'accessToken', 'hash', 'index'],
+        inputs: ['style', 'center', 'zoom', 'hash', 'index'],
         providers: [exports.MapBoxService]
     }),
     __param(0, _angular_core.Inject(exports.MapBoxService)), 
