@@ -1,11 +1,10 @@
-/// <reference path="../../../node_modules/@types/mapbox/index.d.ts" />
 import { Injectable, Inject } from '@angular/core';
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import { mapboxgl } from 'mapbox-gl/dist/mapbox-gl.js';
 
 @Injectable()
 export class MapBoxService {
     accessToken: String;
-		public map: Object;
+	public map: Object;
 
   	constructor (@Inject('MAPBOX_KEY') _config: String) {
       if(_config) this.accessToken = _config;
@@ -19,7 +18,7 @@ export class MapBoxService {
 			return true; 
     }
 
-    Marker(el: any, options: Object, coordinates: Object, index: number) {
+    Marker(el: any, options: Object, coordinates: Object) {
 			var _self = this;
 
 			setTimeout(function() {
@@ -34,8 +33,7 @@ export class MapBoxService {
 		var _self = this;
 
 		setTimeout(function() {
-			console.log(_self.map);
-			_self.map.flyTo({ center: coordinates, zoom: 16 });
+			_self.map.flyTo({ center: coordinates, zoom: zoom });
 		},100);
 	}
 

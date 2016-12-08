@@ -8,13 +8,14 @@ Angular2 components for [mapbox-gl](https://www.npmjs.com/package/mapbox-gl). Th
 npm install --save angular2-mapbox
 ```
 
-Inside your @NgModule, add the MapBoxModule along with your API key for Mapbox ([https://www.mapbox.com/studio/account/tokens/](you can grab one here)):
+Inside your @NgModule, add the MapBoxModule along with your API key for Mapbox ([you can grab one here](https://www.mapbox.com/studio/account/tokens/)) :
 
 ```javascript
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MapBoxModule }  from 'angular2-mapbox/core';
 import { AppComponent }  from './app.component';
+
+import { MapBoxModule }  from 'angular2-mapbox/core';
 
 @NgModule({
   imports: [ 

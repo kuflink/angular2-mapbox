@@ -20,6 +20,7 @@ export class MapBoxMarkerDirective implements OnInit {
 		popup: String;
 		map: Object;
 		data: Object;
+		flyTo: number;
 		@Output() click = new EventEmitter();
 
 		constructor(@Inject(MapBoxService) private _mapBoxService: MapBoxService) {}

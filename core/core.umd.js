@@ -1,10 +1,8 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('mapbox-gl/dist/mapbox-gl.js')) :
     typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'mapbox-gl/dist/mapbox-gl.js'], factory) :
-    (factory((global.mapbox = global.mapbox || {}, global.mapbox.core = global.mapbox.core || {}),global.ng.core,global.mapboxgl));
-}(this, (function (exports,_angular_core,mapboxgl) { 'use strict';
-
-mapboxgl = 'default' in mapboxgl ? mapboxgl['default'] : mapboxgl;
+    (factory((global.mapbox = global.mapbox || {}, global.mapbox.core = global.mapbox.core || {}),global.ng.core,global.mapboxGl_dist_mapboxGl_js));
+}(this, (function (exports,_angular_core,mapboxGl_dist_mapboxGl_js) { 'use strict';
 
 var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -24,14 +22,14 @@ exports.MapBoxService = class MapBoxService {
             this.accessToken = _config;
     }
     Map(options) {
-        mapboxgl.accessToken = this.accessToken;
-        this.map = new mapboxgl.Map(options);
+        mapboxGl_dist_mapboxGl_js.mapboxgl.accessToken = this.accessToken;
+        this.map = new mapboxGl_dist_mapboxGl_js.mapboxgl.Map(options);
         return true;
     }
-    Marker(el, options, coordinates, index) {
+    Marker(el, options, coordinates) {
         var _self = this;
         setTimeout(function () {
-            new mapboxgl.Marker(el, options)
+            new mapboxGl_dist_mapboxGl_js.mapboxgl.Marker(el, options)
                 .setLngLat(coordinates)
                 .addTo(_self.map);
         }, 100);
@@ -39,8 +37,7 @@ exports.MapBoxService = class MapBoxService {
     flyTo(coordinates, zoom) {
         var _self = this;
         setTimeout(function () {
-            console.log(_self.map);
-            _self.map.flyTo({ center: coordinates, zoom: 16 });
+            _self.map.flyTo({ center: coordinates, zoom: zoom });
         }, 100);
     }
     prevMarker() {
@@ -87,7 +84,7 @@ exports.MapBoxComponent = class MapBoxComponent {
                 center: _self.center,
                 zoom: _self.zoom,
                 hash: _self.hash
-            }, _self.index);
+            });
             _self.state.emit("Loaded");
         }, 100);
     }
