@@ -1,10 +1,12 @@
 import { Injectable, Inject } from '@angular/core';
 import { mapboxgl } from 'mapbox-gl/dist/mapbox-gl.js';
 
+import { Map } from '../interfaces/Map';
+
 @Injectable()
 export class MapBoxService {
     accessToken: String;
-	public map: Object;
+	public map: Map;
 
   	constructor (@Inject('MAPBOX_KEY') _config: String) {
       if(_config) this.accessToken = _config;
