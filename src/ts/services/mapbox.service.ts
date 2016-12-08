@@ -1,34 +1,36 @@
 import { Injectable, Inject } from '@angular/core';
-import { mapboxgl } from 'mapbox-gl/dist/mapbox-gl.js';
-
-import { Map } from '../interfaces/Map';
+import {
+  Map,
+  Marker,
+  Style,
+  LngLat
+} from 'mapbox-gl';
 
 @Injectable()
 export class MapBoxService {
     accessToken: String;
-	public map: Map;
+	public map: any;
 
   	constructor (@Inject('MAPBOX_KEY') _config: String) {
       if(_config) this.accessToken = _config;
     }
 
     Map(options: Object) {
-			mapboxgl.accessToken = this.accessToken;
+		(mapboxgl as any).accessToken = this.accessToken;
 
-			this.map = new mapboxgl.Map(options);
+		this.map = new mapboxgl.Map(options);
 
-			return true; 
+		return true; 
     }
 
-    Marker(el: any, options: Object, coordinates: Object) {
-			var _self = this;
+    Marker(el: any, options: Object, coordinates: number[]) {
+		var _self = this;
 
-			setTimeout(function() {
-				new mapboxgl.Marker(el, options)
-					.setLngLat(coordinates)
-					.addTo(_self.map);
-			}, 100);
-			
+		setTimeout(function() {
+			new mapboxgl.Marker(el, options)
+				.setLngLat(coordinates)
+				.addTo(_self.map);
+		}, 100);	
     }
 
 	flyTo(coordinates: Object, zoom: number) {

@@ -16,7 +16,7 @@ export class MapBoxMarkerDirective implements OnInit {
 		image: String;
 		width: number = 60;
 		height: number = 60;
-		coordinates: Object;
+		coordinates: number[];
 		popup: String;
 		map: Object;
 		data: Object;
