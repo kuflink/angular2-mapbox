@@ -1,8 +1,10 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('mapbox-gl')) :
-    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'mapbox-gl'], factory) :
-    (factory((global.mapbox = global.mapbox || {}, global.mapbox.core = global.mapbox.core || {}),global.ng.core,global.mapbox-gl));
-}(this, (function (exports,_angular_core,mapboxGl) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('mapbox-gl/dist/mapbox-gl.js')) :
+    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'mapbox-gl/dist/mapbox-gl.js'], factory) :
+    (factory((global.mapbox = global.mapbox || {}, global.mapbox.core = global.mapbox.core || {}),global.ng.core,global.mapboxgl));
+}(this, (function (exports,_angular_core,mapboxgl) { 'use strict';
+
+mapboxgl = 'default' in mapboxgl ? mapboxgl['default'] : mapboxgl;
 
 var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -22,14 +24,14 @@ exports.MapBoxService = class MapBoxService {
             this.accessToken = _config;
     }
     Map(options) {
-        mapboxGl.mapboxgl.accessToken = this.accessToken;
-        this.map = new mapboxGl.mapboxgl.Map(options);
+        mapboxgl.accessToken = this.accessToken;
+        this.map = new mapboxgl.Map(options);
         return true;
     }
     Marker(el, options, coordinates, index) {
         var _self = this;
         setTimeout(function () {
-            new mapboxGl.mapboxgl.Marker(el, options)
+            new mapboxgl.Marker(el, options)
                 .setLngLat(coordinates)
                 .addTo(_self.map);
         }, 100);
@@ -250,12 +252,6 @@ exports.MapBoxModule = MapBoxModule_1 = __decorate$3([
     }), 
     __metadata$3('design:paramtypes', [])
 ], exports.MapBoxModule);
-
-/**
- * @module
- * @description
- * Entry point for all public APIs of the core package.
- */
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

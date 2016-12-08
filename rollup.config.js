@@ -6,6 +6,6 @@ export default {
   sourceMap: true,
   globals: {
     '@angular/core': 'ng.core',
-    'mapbox-gl': 'mapbox-gl'
+    'mapbox-gl': 'mapboxgl'
   }
 };

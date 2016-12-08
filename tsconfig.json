@@ -6,11 +6,13 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "src/js",
-    "rootDir": ".",
     "sourceMap": true,
     "removeComments": false,
     "moduleResolution": "node",
     "declaration": true,
     "lib": [ "es2015", "dom" ]
-  }
+  },
+  "include": [
+    "src/ts/**/*"
+  ]
 }
