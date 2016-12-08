@@ -13,8 +13,9 @@ Inside your @NgModule, add the MapBoxModule along with your API key for Mapbox (
 ```javascript
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MapBoxModule }  from 'angular2-mapbox/core';
 import { AppComponent }  from './app.component';
+
+import { MapBoxModule }  from 'angular2-mapbox/core';
 
 @NgModule({
   imports: [ 
