@@ -14,7 +14,7 @@ import { MapBoxService } from '../services/mapbox.service';
         <ng-content></ng-content>
       </div>
     `,
-    inputs: ['style', 'center', 'zoom', 'accessToken', 'hash', 'index'],
+    inputs: ['style', 'center', 'zoom', 'hash', 'index'],
 	providers: [MapBoxService]
 })
 
@@ -25,7 +25,7 @@ export class MapBoxComponent implements OnInit {
     center: Object = [-5.646973, 52.087483];
     zoom: number = 6;
     hash: Boolean = false;
-	public index: number = 0;
+		public index: number = 0;
 
 	constructor(@Inject(MapBoxService) private _mapBoxService: MapBoxService) { }
 
