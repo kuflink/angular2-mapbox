@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
+    "target": "es6",
+    "module": "commonjs",
     "noImplicitAny": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -9,8 +9,7 @@
     "sourceMap": true,
     "removeComments": false,
     "moduleResolution": "node",
-    "declaration": true,
-    "lib": [ "es2015", "dom" ]
+    "declaration": true
   },
   "include": [
     "src/ts/**/*"

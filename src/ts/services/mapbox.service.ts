@@ -1,14 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
-import {
-  Map,
-  Marker,
-  Style,
-  LngLat
-} from 'mapbox-gl';
+var mapboxgl = require("mapbox-gl/js/mapbox-gl.js");
 
 @Injectable()
 export class MapBoxService {
-    accessToken: String;
+	accessToken: String;
 	public map: any;
 
   	constructor (@Inject('MAPBOX_KEY') _config: String) {
@@ -16,11 +11,11 @@ export class MapBoxService {
     }
 
     Map(options: Object) {
-		(mapboxgl as any).accessToken = this.accessToken;
+			mapboxgl.accessToken = this.accessToken;
 
-		this.map = new mapboxgl.Map(options);
+			this.map = new mapboxgl.Map(options);
 
-		return true; 
+			return true; 
     }
 
     Marker(el: any, options: Object, coordinates: number[]) {

@@ -40,7 +40,7 @@ Now added the map for [mapbox-gl](https://www.npmjs.com/package/mapbox-gl) and a
     },
     map: {
       ...
-      'mapbox-gl': 'npm:mapbox-gl',
+      'mapbox-gl': 'npm:mapbox-gl/dist/mapbox-gl.js',
       'angular2-mapbox/core': 'npm:angular2-mapbox/core/core.umd.js'
     },
     ...
