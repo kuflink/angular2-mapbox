@@ -1,3 +1,4 @@
+/// <reference path="../../../node_modules/@types/mapbox-gl/index.d.ts"/>
 import { Injectable, Inject } from '@angular/core';
 import * as mapbox from 'mapbox-gl';
 
