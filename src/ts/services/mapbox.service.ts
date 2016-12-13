@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-var mapboxgl = require("mapbox-gl/js/mapbox-gl.js");
+import * as mapbox from 'mapbox-gl';
 
 @Injectable()
 export class MapBoxService {
@@ -11,21 +11,22 @@ export class MapBoxService {
     }
 
     Map(options: Object) {
-			mapboxgl.accessToken = this.accessToken;
+		this.assign(mapbox, "accessToken", this.accessToken);
 
-			this.map = new mapboxgl.Map(options);
+		this.map = new mapbox.Map(options);
 
-			return true; 
+		return true; 
     }
 
     Marker(el: any, options: Object, coordinates: number[]) {
 		var _self = this;
 
 		setTimeout(function() {
-			new mapboxgl.Marker(el, options)
+			new mapbox.Marker(el, options)
 				.setLngLat(coordinates)
 				.addTo(_self.map);
 		}, 100);	
+
     }
 
 	flyTo(coordinates: Object, zoom: number) {
@@ -42,5 +43,21 @@ export class MapBoxService {
 
 	nextMarker() {
 		console.log(this.map);
+	}
+
+	private assign(obj: any, prop: any, value: any) {
+		if (typeof prop === "string")
+			prop = prop.split(".");
+
+		if (prop.length > 1) {
+			var e = prop.shift();
+			this.assign(obj[e] =
+					Object.prototype.toString.call(obj[e]) === "[object Object]"
+					? obj[e]
+					: {},
+				prop,
+				value);
+		} else
+			obj[prop[0]] = value;
 	}
 }

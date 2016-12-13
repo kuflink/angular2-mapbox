@@ -1,6 +1,6 @@
 {
   "name": "angular2-mapbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "\u0016Angular 2 components for mapbox-gl",
   "main": "index.js",
   "scripts": {
@@ -29,11 +29,5 @@
     "@angular/core": "^2.2.4",
     "rollup": "0.36.4",
     "rxjs": "^5.0.0-rc.5"
-  },
-  "devDependencies": {
-    "@types/mapbox-gl": "^0.27.0",
-    "rollup-plugin-commonjs": "^5.0.5",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-typescript": "^0.8.1"
   }
 }
