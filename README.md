@@ -47,6 +47,18 @@ Now added the map for [mapbox-gl](https://www.npmjs.com/package/mapbox-gl) and a
 })(this);
 ```
 
+Lastly, we need to include the mapbox-gl css file. You can do this via @import or including it as a stylesheet in your HTML.
+
+```
+@import "node_modules/mapbox-gl/dist/mapbox-gl";
+```
+
+OR 
+
+```html
+<link rel="stylesheet" href="node_modules/mapbox-gl/dist/mapbox-gl.css"/>
+```
+
 ## Usage
 
 Now you can start using the angular2 mapbox components.
