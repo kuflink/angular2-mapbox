@@ -14,6 +14,7 @@ export class MapBoxService {
 		this.assign(mapbox, "accessToken", this.accessToken);
 
 		this.map = new mapbox.Map(options);
+		this.map.addControl(new mapbox.NavigationControl());
 
 		return true; 
     }

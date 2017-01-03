@@ -24,6 +24,7 @@ exports.MapBoxService = class MapBoxService {
     Map(options) {
         this.assign(mapbox, "accessToken", this.accessToken);
         this.map = new mapbox.Map(options);
+        this.map.addControl(new mapbox.NavigationControl());
         return true;
     }
     Marker(el, options, coordinates) {
