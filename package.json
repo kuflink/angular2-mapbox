@@ -1,6 +1,6 @@
 {
   "name": "angular2-mapbox",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "\u0016Angular 2 components for mapbox-gl",
   "main": "index.js",
   "scripts": {
