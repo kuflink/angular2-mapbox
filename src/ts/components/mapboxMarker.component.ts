@@ -31,10 +31,11 @@ export class MapBoxMarkerDirective implements OnInit {
 			var el = document.createElement('div');
 
 			el.className = 'marker';
-			el.style.backgroundImage = 'url(' + this.image + ')';
-			el.style.backgroundRepeat = 'no-repeat';
-			el.style.width = this.width + 'px';	
-			el.style.height = this.height + 'px';
+			el.style.backgroundImage 	= 'url(' + this.image + ')';
+			el.style.backgroundSize   	= 'cover';
+			el.style.backgroundRepeat 	= 'no-repeat';
+			el.style.width 				= this.width + 'px';	
+			el.style.height 			= this.height + 'px';
 
 			this._mapBoxService.Marker(
 				el, // element

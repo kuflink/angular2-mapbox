@@ -14,7 +14,8 @@ export class MapBoxService {
 		this.assign(mapbox, "accessToken", this.accessToken);
 
 		this.map = new mapbox.Map(options);
-		this.map.addControl(new mapbox.NavigationControl());
+		this.map.addControl(new mapbox.NavigationControl("top-left"));
+		this.map.addControl(new mapbox.GeolocateControl());
 
 		return true; 
     }

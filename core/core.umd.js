@@ -24,7 +24,8 @@ exports.MapBoxService = class MapBoxService {
     Map(options) {
         this.assign(mapbox, "accessToken", this.accessToken);
         this.map = new mapbox.Map(options);
-        this.map.addControl(new mapbox.NavigationControl());
+        this.map.addControl(new mapbox.NavigationControl("top-left"));
+        this.map.addControl(new mapbox.GeolocateControl());
         return true;
     }
     Marker(el, options, coordinates) {
@@ -157,6 +158,7 @@ exports.MapBoxMarkerDirective = class MapBoxMarkerDirective {
         var el = document.createElement('div');
         el.className = 'marker';
         el.style.backgroundImage = 'url(' + this.image + ')';
+        el.style.backgroundSize = 'cover';
         el.style.backgroundRepeat = 'no-repeat';
         el.style.width = this.width + 'px';
         el.style.height = this.height + 'px';
