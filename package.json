@@ -1,6 +1,6 @@
 {
   "name": "angular2-mapbox",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "\u0016Angular 2 components for mapbox-gl",
   "main": "index.js",
   "scripts": {
@@ -25,10 +25,9 @@
   },
   "homepage": "https://github.com/kuflink/angular2-mapbox#readme",
   "dependencies": {
+    "mapbox-gl": "^0.32.0",
     "@angular/core": "^2.2.4",
-    "@types/mapbox-gl": "^0.27.0",
-    "mapbox-gl": "^0.28.0",
-    "rollup": "0.36.4",
+    "rollup": "0.41.4",
     "rxjs": "^5.0.0-rc.5"
   }
 }
