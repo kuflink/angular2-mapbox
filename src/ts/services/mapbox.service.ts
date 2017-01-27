@@ -1,4 +1,4 @@
-/// <reference path="../../../node_modules/@types/mapbox-gl/index.d.ts"/>
+/// <reference path="../../../index.d.ts"/>
 import { Injectable, Inject } from '@angular/core';
 import * as mapbox from 'mapbox-gl';
 
@@ -15,7 +15,7 @@ export class MapBoxService {
 		this.assign(mapbox, "accessToken", this.accessToken);
 
 		this.map = new mapbox.Map(options);
-		this.map.addControl(new mapbox.NavigationControl("top-left"));
+		this.map.addControl(new mapbox.NavigationControl());
 		this.map.addControl(new mapbox.GeolocateControl());
 
 		return true; 
