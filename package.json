@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/kuflink/angular2-mapbox#readme",
   "dependencies": {
-    "mapbox-gl": "^0.34.0",
+    "mapbox-gl": "^0.35.0",
     "@angular/core": "^4.0.0",
     "rollup": "0.41.6",
     "rxjs": "^5.0.0-rc.5"
