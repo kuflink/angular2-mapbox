@@ -22,21 +22,19 @@ export class MapBoxService {
     }
 
     Marker(el: any, options: Object, coordinates: number[]) {
-		var _self = this;
 
-		setTimeout(function() {
+		setTimeout(() => {
 			new mapbox.Marker(el, options)
 				.setLngLat(coordinates)
-				.addTo(_self.map);
+				.addTo(this.map);
 		}, 100);	
 
     }
 
 	flyTo(coordinates: Object, zoom: number) {
-		var _self = this;
 
-		setTimeout(function() {
-			_self.map.flyTo({ center: coordinates, zoom: zoom });
+		setTimeout(() => {
+			this.map.flyTo({ center: coordinates, zoom: zoom });
 		},100);
 	}
 

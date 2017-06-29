@@ -63,11 +63,13 @@ OR
 
 Now you can start using the angular2 mapbox components.
 
-### mapbox[_style, center, zoom, hash, index_]
+### mapbox[options]
 
 ```html
-<mapbox [center]="[-5.646973, 52.087483]"></mapbox>
+<mapbox [options]="myMapboxOptions"></mapbox>
 ```
+
+`options` should be use the interface `MapOptions` which is exported by this package.
 
 * style: string, defaultsTo = **'mapbox://styles/mapbox/streets-v9'**
 * center: array, defaultsTo = **[-5.646973, 52.087483]**

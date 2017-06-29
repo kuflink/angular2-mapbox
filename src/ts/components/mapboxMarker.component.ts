@@ -26,8 +26,6 @@ export class MapBoxMarkerDirective implements OnInit {
 		constructor(@Inject(MapBoxService) private _mapBoxService: MapBoxService) {}
 
 		ngOnInit() {
-
-			var _self = this;
 			var el = document.createElement('div');
 
 			el.className = 'marker';
@@ -43,15 +41,15 @@ export class MapBoxMarkerDirective implements OnInit {
 				this.coordinates // coordinates
 			);  
 
-			el.addEventListener("click", function() {
+			el.addEventListener("click", () => {
 
-				if(_self.flyTo) {
-					_self._mapBoxService.flyTo(_self.coordinates, _self.flyTo);
+				if(this.flyTo) {
+					this._mapBoxService.flyTo(this.coordinates, this.flyTo);
 				}
 					
-				_self.click.emit({
-					data: _self.data,
-					coordinates: _self.coordinates
+				this.click.emit({
+					data: this.data,
+					coordinates: this.coordinates
 				});
 			});
 		}
