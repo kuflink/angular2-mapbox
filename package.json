@@ -27,7 +27,7 @@
   "dependencies": {
     "mapbox-gl": "^0.38.0",
     "@angular/core": "^4.0.0",
-    "rollup": "0.43.1",
+    "rollup": "0.45.2",
     "rxjs": "^5.0.0-rc.5"
   }
 }
